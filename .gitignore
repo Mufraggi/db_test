@@ -1,0 +1,33 @@
+# Ignorer les fichiers générés par Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Ignorer les fichiers de build Go
+/bin/
+/pkg/
+
+# Ignorer les fichiers de configuration Go
+/go.sum
+
+# Ignorer les fichiers de migration de base de données
+/dbmate-*/.dbmate.env
+
+# Ignorer les fichiers de données de la base de données
+/data/
+
+# Ignorer les fichiers de sauvegarde
+*.bak
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les fichiers de configuration
+*.conf
+
+# Ignorer les fichiers de secrets ou d'environnement
+.env
