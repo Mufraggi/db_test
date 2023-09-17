@@ -31,3 +31,4 @@
 
 # Ignorer les fichiers de secrets ou d'environnement
 .env
+*.xml
