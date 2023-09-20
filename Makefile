@@ -7,7 +7,13 @@ DB_PWD := password
 
 .PHONY: start-db-container
 start-db-container:
-	docker run --name $(DB_CONTAINER_NAME) -v $(CURDIR)/data:/var/lib/postgresql/data -e POSTGRES_USER=$(DB_USER) -e POSTGRES_PASSWORD=$(DB_PWD) -e POSTGRES_DB=$(DB_NAME) -p $(DB_PORT):$(DB_PORT) -d postgres
+	docker run --name $(DB_CONTAINER_NAME) \
+		-v $(CURDIR)/data:/var/lib/postgresql/data \
+		-e POSTGRES_USER=$(DB_USER) \
+		-e POSTGRES_PASSWORD=$(DB_PWD) \
+		-e POSTGRES_DB=$(DB_NAME) \
+		-p $(DB_PORT):$(DB_PORT) \
+		-d postgres
 
 
 .PHONY: stop-db-container

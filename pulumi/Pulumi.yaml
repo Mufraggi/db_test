@@ -1,0 +1,3 @@
+name: postgre-db-article
+runtime: go
+description: A minimal Google Cloud Go Pulumi program
