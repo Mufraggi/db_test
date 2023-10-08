@@ -1,0 +1,31 @@
+name: Exemple de pipeline CI/CD avec secret GCP
+
+on:
+  push:
+    branches:
+      - main  # Remplacez par la branche de votre choix
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Vérifier le code
+      run: echo "Exécution des vérifications de code..."
+
+    - name: Utilisation du secret GCP
+      env:
+        GCP_AUTH_KEY: ${{ secrets.NOM_DU_SECRET }}
+      run: |
+        echo "$GCP_AUTH_KEY" > gcp-key.json
+        gcloud auth activate-service-account --key-file=gcp-key.json
+
+        # Configurez ici les commandes pour exécuter vos migrations ou d'autres tâches GCP
+        # Par exemple :
+        gcloud compute instances list
+
+    - name: Nettoyage
+      run: |
+        rm -f gcp-key.json
+
+  # Ajoutez d'autres étapes selon vos besoins
