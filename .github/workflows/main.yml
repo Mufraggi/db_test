@@ -9,15 +9,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Vérifier le code
-      run: echo "Exécution des vérifications de code..."
-
     - name: Utilisation du secret GCP
       env:
         GCP_AUTH_KEY: ${{ secrets.NOM_DU_SECRET }}
       run: |
         echo "$GCP_AUTH_KEY" > gcp-key.json
+        cat gcp-key.json
         gcloud auth activate-service-account --key-file=gcp-key.json
 
         # Configurez ici les commandes pour exécuter vos migrations ou d'autres tâches GCP
