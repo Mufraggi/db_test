@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Utilisation du secret GCP
       env:
-        GCP_AUTH_KEY: ${{ secrets.NOM_DU_SECRET }}
+        GCP_AUTH_KEY: ${{ secrets.GCP_AUTH_KEY }}
       run: |
         touch gcp-key.json
         echo "$GCP_AUTH_KEY" > gcp-key.json
