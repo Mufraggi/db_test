@@ -14,6 +14,7 @@ jobs:
       env:
         GCP_AUTH_KEY: ${{ secrets.NOM_DU_SECRET }}
       run: |
+        touch gcp-key.json
         echo "$GCP_AUTH_KEY" > gcp-key.json
         cat gcp-key.json
         gcloud auth activate-service-account --key-file=gcp-key.json
