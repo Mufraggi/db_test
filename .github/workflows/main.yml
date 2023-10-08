@@ -34,7 +34,7 @@ jobs:
         curl -fsSL -o /usr/local/bin/dbmate https://github.com/amacneil/dbmate/releases/latest/download/dbmate-linux-amd64
         chmod +x /usr/local/bin/dbmate
         # Exécutez la migration avec dbmate
-        dbmate -u "postgres://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}" migrate
+        dbmate -u "postgres://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=disable" migrate
   
     - name: Nettoyage
       run: |
