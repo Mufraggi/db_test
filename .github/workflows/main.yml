@@ -9,6 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    steps:
     - name: Utilisation du secret GCP
       env:
         GCP_AUTH_KEY: ${{ secrets.NOM_DU_SECRET }}
@@ -19,7 +20,7 @@ jobs:
 
         # Configurez ici les commandes pour exécuter vos migrations ou d'autres tâches GCP
         # Par exemple :
-        gcloud compute instances list
+        # gcloud compute instances list
 
     - name: Nettoyage
       run: |
