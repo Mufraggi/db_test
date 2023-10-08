@@ -34,7 +34,7 @@ jobs:
         curl -fsSL -o /usr/local/bin/dbmate https://github.com/amacneil/dbmate/releases/latest/download/dbmate-linux-amd64
         chmod +x /usr/local/bin/dbmate
         # Exécutez la migration avec dbmate
-        dbmate -u "postgres://testMedium:secretMedium@34.155.64.154:5432/testcloudSqlInstance=slacklinemailling:europe-west9:test-db" migrate
+        dbmate -u "postgres://testMedium:secretMedium@34.155.64.154:5432/testcloudSqlInstance=slacklinemailling:europe-west9:article-pg-1750bb0" migrate
   
     - name: Nettoyage
       run: |
