@@ -23,6 +23,18 @@ jobs:
         # Par exemple :
         # gcloud compute instances list
 
+    - name: Exécution des migrations de base de données avec dbmate
+      run: |
+        # Remplacez les valeurs suivantes par les vôtres
+        DB_HOST="34.155.64.154"
+        DB_PORT="5432"
+        DB_USER="testMedium"
+        DB_PASS="secretMedium"
+        DB_NAME="test-db"
+    
+        # Exécutez la migration avec dbmate
+        dbmate -d "postgres://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}" migrate
+  
     - name: Nettoyage
       run: |
         rm -f gcp-key.json
